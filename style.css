@@ -193,3 +193,40 @@ body {
     transform: translateY(0);
   }
 }
+
+.pricing-container {
+  background-color: var(--card-bg-color);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px var(--card-shadow);
+  border: 1px solid #c9e6ff;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.pricing-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.pricing-list li {
+  font-size: 1.3em;
+  color: var(--text-color);
+  margin: 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2f0ff;
+  transition: all 0.3s ease;
+}
+
+.pricing-list li:hover {
+  color: var(--primary-color);
+  transform: translateX(10px);
+}
+
+.pricing-list li strong {
+  color: var(--primary-color);
+  display: inline-block;
+  min-width: 200px;
+}
