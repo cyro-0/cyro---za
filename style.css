@@ -1,11 +1,12 @@
 :root {
-  --primary-color: #0077c2;
+  --primary-color: #71a9d8;
   --secondary-color: #e0f2ff;
-  --text-color: #333333;
-  --light-text-color: #666666;
-  --card-bg-color: #f0f8ff;
-  --card-shadow: rgba(0, 0, 0, 0.1);
-  --hover-glow: #00aaff;
+  --text-color: #ffffff;
+  --light-text-color: #94a3b8;
+  --card-bg-color: rgba(15, 15, 15, 0.8);
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --hover-glow: #71a9d8;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
 }
 
 /* Custom Scrollbar */
@@ -30,14 +31,31 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--secondary-color);
   color: var(--text-color);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Goldman', sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   transition: background-color 0.5s ease;
   overflow-y: scroll;
+
+  /* Background Image and Overlay */
+  background-image: url('images/background.jpg'); /* Changed image name here */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-overlay);
+  z-index: -1;
 }
 
 .navbar {
@@ -45,14 +63,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background-color: #ffffff;
+  background-color: rgba(15, 15, 15, 0.7);
   box-shadow: 0 4px 6px -1px var(--card-shadow);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: all 0.5s ease;
+  backdrop-filter: blur(5px);
 }
 
 .navbar .logo {
@@ -82,7 +100,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 120px 40px 40px; /* Adjust padding for fixed header */
+  padding: 120px 40px 40px;
   transition: padding 0.5s ease;
 }
 
@@ -90,7 +108,7 @@ body {
   font-size: 3.5em;
   font-weight: bold;
   color: var(--primary-color);
-  text-shadow: 2px 2px 8px rgba(0, 119, 194, 0.2);
+  text-shadow: 2px 2px 8px rgba(113, 169, 216, 0.2);
   margin-bottom: 10px;
   animation: fadeInDown 1s ease-in-out;
 }
@@ -125,7 +143,7 @@ body {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 5px 15px var(--card-shadow);
-  border: 1px solid #c9e6ff;
+  border: 1px solid #1f1f1f;
   text-align: center;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -156,7 +174,7 @@ body {
 
 .product-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(0, 119, 194, 0.3);
+  box-shadow: 0 10px 30px rgba(113, 169, 216, 0.3);
   border-color: var(--primary-color);
 }
 
@@ -194,12 +212,13 @@ body {
   }
 }
 
+/* Pricing Page specific styles */
 .pricing-container {
   background-color: var(--card-bg-color);
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 5px 15px var(--card-shadow);
-  border: 1px solid #c9e6ff;
+  border: 1px solid #1f1f1f;
   max-width: 600px;
   width: 100%;
   margin-top: 30px;
