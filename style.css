@@ -294,3 +294,6 @@ body::before {
 .buy-button:hover {
   background-color: #0097a7;
 }
+.buy-now {
+  display: none;
+}
