@@ -253,3 +253,148 @@ body::before {
   display: inline-block;
   min-width: 200px;
 }
+
+
+/*
+=================================
+  Purchase Page Styles
+=================================
+*/
+
+.purchase-container {
+  background-color: var(--card-bg-color);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px var(--card-shadow);
+  border: 1px solid #1f1f1f;
+  width: 100%;
+  max-width: 800px; /* Increased max-width for better layout */
+  margin-top: 50px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.purchase-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.purchase-header .title {
+  font-size: 2.5em; /* Slightly smaller title for context */
+}
+
+.purchase-body {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; /* Allows stacking on smaller screens */
+}
+
+.order-summary {
+  flex: 1;
+  min-width: 250px; /* Ensures it doesn't get too squished */
+  padding: 20px;
+  border: 1px solid #1f1f1f;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.order-summary h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+
+.summary-item, .summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  font-size: 1.1em;
+}
+
+.summary-total {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: var(--primary-color);
+  border-top: 1px solid #1f1f1f;
+  padding-top: 15px;
+  margin-top: 20px;
+}
+
+.payment-form {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section {
+  margin-bottom: 25px;
+}
+
+.form-section h2 {
+  font-size: 1.4em;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1em;
+  color: var(--light-text-color);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #1f1f1f;
+  background-color: rgba(0,0,0,0.3);
+  color: var(--text-color);
+  font-size: 1em;
+  font-family: 'Goldman', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 15px rgba(113, 169, 216, 0.3);
+}
+
+.custom-card-element {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #1f1f1f;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.purchase-button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-family: 'Goldman', sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.purchase-button:hover {
+  background-color: var(--hover-glow);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(113, 169, 216, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .purchase-body {
+    flex-direction: column;
+  }
+}
