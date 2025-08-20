@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .sparkle {
       position: absolute;
       background-color: #0077c2;
-      border-radius: 50%;
+      border-radius: 35%;
       opacity: 0;
       pointer-events: none;
       animation: sparkle-fade-out 1s forwards cubic-bezier(0.19, 1, 0.22, 1);
