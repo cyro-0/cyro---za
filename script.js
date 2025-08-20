@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         update-types: ["version-update:semver-patch"]
 const express = require('express');
 const app = express();
-const stripe = require('stripe')('pk_live_51RvSdLCPJOFxdAiD046f9l7msOLzbUzBe9uMKR8lvqGQHmY9T1sDbPivodxsiGmycSDOW6zGL9urAoJ4ZyuweuWA00QY0xebJ9'); // Replace with your actual key
+const stripe = require('stripe')('YOUR_SECRET_KEY'); // Replace with your actual key
 
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
