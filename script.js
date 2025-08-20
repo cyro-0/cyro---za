@@ -51,3 +51,27 @@ document.addEventListener('DOMContentLoaded', () => {
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-patch"]
+const express = require('express');
+const app = express();
+const stripe = require('stripe')('YOUR_SECRET_KEY'); // Replace with your actual key
+
+app.post('/create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ['card'],
+    line_items: [{
+      price_data: {
+        currency: 'usd',
+        product_data: {
+          name: 'Your Product Name',
+        },
+        unit_amount: 2000, // $20.00
+      },
+      quantity: 1,
+    }],
+    mode: 'payment',
+    success_url: 'https://yourdomain.com/success',
+    cancel_url: 'https://yourdomain.com/cancel',
+  });
+
+  res.json({ id: session.id });
+});
