@@ -439,35 +439,34 @@ body::before {
 
 /*
 =================================
-  About Me Page Enhancements
+  Social Links Section
 =================================
 */
 
-.page-title-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px; /* Creates space between the title and the logo */
-  margin-bottom: 10px; /* Adjusts spacing to the description below */
+.social-links {
+  margin-top: 40px; /* Adds space between the description and the logo */
+  text-align: center; /* Ensures the logo container is centered */
 }
 
 .discord-link {
   display: inline-block;
-  line-height: 0; /* Ensures the link doesn't add extra vertical space */
+  line-height: 0; /* Prevents extra vertical space */
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .discord-logo {
-  color: var(--light-text-color); /* Sets the initial color to match your secondary text */
+  color: var(--light-text-color); /* Initial color matches secondary text */
+  width: 48px; /* You can adjust size if needed */
+  height: auto;
   transition: color 0.3s ease;
 }
 
 .discord-link:hover {
-  transform: scale(1.1); /* Slightly enlarges the logo on hover */
+  transform: translateY(-5px); /* Lifts the logo slightly on hover for a nice effect */
 }
 
 .discord-link:hover .discord-logo {
-  color: var(--primary-color); /* Changes logo color to your main accent color */
-  /* Adds a subtle glow that matches other hover effects on your site */
+  color: var(--primary-color); /* Changes color to your main theme color */
+  /* Adds the signature glow to match other interactive elements */
   filter: drop-shadow(0 0 10px rgba(113, 169, 216, 0.7));
 }
