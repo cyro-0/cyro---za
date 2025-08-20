@@ -1,3 +1,4 @@
+@@ -0,0 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Simple sparkle effect on click
   document.body.addEventListener('click', (e) => {
