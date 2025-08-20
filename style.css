@@ -249,20 +249,28 @@ body::before {
   display: inline-block;
   min-width: 200px;
 }
+.purchase,
 .purchase-btn {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color); /* Matches your theme */
   color: var(--text-color);
-  border: none;
-  padding: 12px 25px;
+  border: 2px solid var(--primary-color);
+  border-radius: 12px; /* Makes it more boxy than pill-shaped */
+  padding: 15px 20px;
   font-size: 1em;
   font-weight: bold;
-  border-radius: 8px;
-  margin-top: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px var(--card-shadow);
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: 100%;
+  max-width: 180px;
+  margin: 20px auto 0;
 }
 
+.purchase:hover,
 .purchase-btn:hover {
   background-color: var(--hover-glow);
+  color: var(--text-color);
   transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(113, 169, 216, 0.4);
 }
