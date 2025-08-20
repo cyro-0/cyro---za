@@ -42,3 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   document.head.appendChild(style);
 });
+
+  - package-ecosystem: "maven"
+    directory: "/server/java/"
+    schedule:
+      interval: "weekly"
+      day: "thursday"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
