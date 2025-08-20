@@ -3,24 +3,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>About me</title>
+  <title>Purchase - Cyro</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" type="image/png" href="images/cyro.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Cyro - Lyric's selling hub">
-  <meta property="og:description" content="Learn more about Lyric">
-  <meta property="og:image" content="https://getcyro.xyz/images/cyro.png">
-  <meta property="og:url" content="https://getcyro.xyz">
-  <meta name="theme-color" content="#71a9d8">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cyro - Shop">
-  <meta name="twitter:description" content="Lyric's selling site">
-  <meta name="twitter:image" content="https://getcyro.xyz/images/cyro.png">
 </head>
 <body>
   <header class="navbar">
@@ -33,31 +21,59 @@
     </nav>
   </header>
 
-<div class="product-grid">
-  <div class="product-box">
-    <h3>Websites</h3>
-    <button class="buy-button">Buy</button>
-  </div>
-  <div class="product-box">
-    <h3>Discord Bots</h3>
-    <button class="buy-button">Buy</button>
-  </div>
-  <div class="product-box">
-    <h3>3D Models</h3>
-    <button class="buy-button">Buy</button>
-  </div>
-  <div class="product-box">
-    <h3>Graphic Design</h3>
-    <button class="buy-button">Buy</button>
-  </div>
-  <div class="product-box">
-    <h3>Roblox Externals</h3>
-    <button class="buy-button">Buy</button>
-  </div>
-</div>
-   <script src="script.js"></script>
+  <main class="main-content">
+    <div class="purchase-container">
+      <div class="purchase-header">
+        <h1 class="title">Complete Your Order</h1>
+        <p class="description">Securely purchase your selected services.</p>
+      </div>
+
+      <div class="purchase-body">
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+          <div class="summary-item">
+            <span>Service's</span>
+            <span>$20.00</span>
+          </div>
+          <div class="summary-total">
+            <span>Total</span>
+            <strong>$20.00</strong>
+          </div>
+        </div>
+
+        <form id="payment-form" class="payment-form">
+          <div class="form-section">
+            <h2>Contact Information</h2>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h2>Payment Details</h2>
+            <div class="form-group">
+              <label for="card-element">Credit or debit card</label>
+              <!-- A Stripe Element will be inserted here. -->
+              <div id="card-element" class="custom-card-element"></div>
+              <!-- Used to display form errors. -->
+              <div id="card-errors" role="alert"></div>
+            </div>
+          </div>
+
+          <button class="purchase-button">
+            <span class="button-text">Submit Payment</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="script.js"></script> <!-- Make sure your script.js is linked -->
 </body>
 </html>
-
-<script src="https://js.stripe.com/v3/"></script>
-<button id="checkout-button">Buy Now</button>
