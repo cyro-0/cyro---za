@@ -257,97 +257,147 @@ body::before {
 
 /*
 =================================
-  Purchase Page Styles
+  Refined Product Box Styles
 =================================
 */
 
-.purchase-container {
-  background-color: var(--card-bg-color);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px var(--card-shadow);
-  border: 1px solid #1f1f1f;
-  width: 100%;
-  max-width: 800px; /* Increased max-width for better layout */
-  margin-top: 50px;
-  animation: fadeInUp 1s ease-in-out;
-}
-
 .purchase-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
-.purchase-header .title {
-  font-size: 2.5em; /* Slightly smaller title for context */
-}
-
-.purchase-body {
+.product-box {
   display: flex;
-  gap: 40px;
-  flex-wrap: wrap; /* Allows stacking on smaller screens */
+  flex-direction: column; /* Align content vertically */
+  justify-content: space-between; /* Space out content */
+  height: 100%; /* Ensure boxes in a row are same height */
 }
 
-.order-summary {
-  flex: 1;
-  min-width: 250px; /* Ensures it doesn't get too squished */
-  padding: 20px;
-  border: 1px solid #1f1f1f;
-  border-radius: 10px;
-  background-color: rgba(0,0,0,0.2);
+.product-box h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
 }
 
-.order-summary h2 {
-  color: var(--primary-color);
-  margin-top: 0;
-  border-bottom: 1px solid var(--primary-color);
-  padding-bottom: 10px;
+.product-box p {
+  font-size: 1em;
+  color: var(--light-text-color);
+  flex-grow: 1; /* Allows paragraph to fill available space */
+  margin-bottom: 20px;
 }
 
-.summary-item, .summary-total {
-  display: flex;
-  justify-content: space-between;
-  margin: 15px 0;
-  font-size: 1.1em;
-}
-
-.summary-total {
+.price {
+  font-size: 2em;
   font-weight: bold;
-  font-size: 1.3em;
   color: var(--primary-color);
-  border-top: 1px solid #1f1f1f;
-  padding-top: 15px;
-  margin-top: 20px;
-}
-
-.payment-form {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-section {
   margin-bottom: 25px;
 }
 
-.form-section h2 {
-  font-size: 1.4em;
+.buy-button {
+  background-color: var(--primary-color);
   color: var(--text-color);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-family: 'Goldman', sans-serif;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.buy-button:hover {
+  background-color: var(--hover-glow);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(113, 169, 216, 0.25);
+}
+
+/*
+=================================
+  Purchase Modal Styles
+=================================
+*/
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background-color: var(--card-bg-color);
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid #1f1f1f;
+  box-shadow: 0 10px 40px var(--card-shadow);
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  animation: slideInUp 0.4s ease-in-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--light-text-color);
+  font-size: 2em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: var(--primary-color);
+}
+
+.modal-content h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  text-align: center;
+  color: var(--light-text-color);
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+
+.modal-content .order-summary {
   margin-bottom: 20px;
 }
 
-.form-group {
+.modal-content .summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4em;
+  padding: 15px 0;
+  border-top: 1px solid #1f1f1f;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.modal-content .form-section {
   margin-bottom: 20px;
 }
 
-.form-group label {
+.modal-content label {
   display: block;
   margin-bottom: 8px;
-  font-size: 1em;
   color: var(--light-text-color);
 }
 
-.form-group input {
+.modal-content input {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
@@ -355,46 +405,34 @@ body::before {
   background-color: rgba(0,0,0,0.3);
   color: var(--text-color);
   font-size: 1em;
-  font-family: 'Goldman', sans-serif;
-  transition: all 0.3s ease;
 }
 
-.form-group input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 15px rgba(113, 169, 216, 0.3);
-}
-
-.custom-card-element {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #1f1f1f;
-  background-color: rgba(0,0,0,0.3);
-}
-
-.purchase-button {
+.submit-purchase-button {
   background-color: var(--primary-color);
   color: var(--text-color);
   border: none;
-  padding: 15px 20px;
+  padding: 15px;
   border-radius: 8px;
   font-family: 'Goldman', sans-serif;
   font-size: 1.2em;
-  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 20px;
+  width: 100%;
+  margin-top: 10px;
 }
 
-.purchase-button:hover {
+.submit-purchase-button:hover {
   background-color: var(--hover-glow);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(113, 169, 216, 0.3);
+  box-shadow: 0 6px 15px rgba(113, 169, 216, 0.25);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .purchase-body {
-    flex-direction: column;
-  }
+/* Keyframe animations for modal */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
